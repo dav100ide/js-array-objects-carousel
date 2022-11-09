@@ -70,7 +70,9 @@ body {
    width: 75%;
    height: 21.875rem;
 }
-
+.item {
+   display: none;
+}
 .main-box img {
    height: 100%;
    object-fit: cover;

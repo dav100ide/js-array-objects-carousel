@@ -51,5 +51,22 @@ images.forEach((element) => {
    const asideImg = template(context);
    asideContainer.innerHTML += asideImg;
 });
-
+// la prima img parte con d-block
+document.querySelector('.item').classList.add('d-block');
+// next
 const next = document.querySelector('.next');
+let currentSlide = 0;
+const itemList = document.querySelectorAll('.item');
+
+next.addEventListener('click', function () {
+   itemList[currentSlide].classList.remove('d-block');
+   if (itemList.length - 1 > currentSlide) {
+      currentSlide++;
+   } else {
+      currentSlide = 0;
+   }
+   itemList[currentSlide].classList.add('d-block');
+   console.log('next', currentSlide);
+});
+
+// prev
