@@ -124,7 +124,7 @@ let autoPlay = setInterval(function () {
       currentSlide = 0;
    }
    addVisibility();
-}, 2500);
+}, 2000);
 
 // seleziono il container del carosello senza il titolo h1
 const container = document.querySelector('.ms_container:not(h1)');
@@ -142,6 +142,6 @@ container.addEventListener('mouseleave', function () {
          currentSlide = 0;
       }
       addVisibility();
-   }, 2500);
+   }, 2000);
    console.log('uscito');
 });

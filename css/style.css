@@ -16,6 +16,9 @@ p {
 /* ======================
       typography
 ========================== */
+h1 {
+   color: #ddd;
+}
 .main-box {
    color: white;
 }
@@ -26,6 +29,7 @@ body {
    height: 100vh;
    display: grid;
    place-items: center;
+   background-color: #222;
 }
 
 .ms_container {
@@ -113,4 +117,5 @@ aside.aside-box {
 ========================== */
 .no-filter {
    filter: unset;
+   border: 1px solid white;
 }
