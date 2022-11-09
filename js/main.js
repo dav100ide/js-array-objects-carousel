@@ -90,8 +90,17 @@ prev.addEventListener('click', function () {
 });
 
 //asideImgs cliccabili
-asideImgs.forEach((asideImg) => {
+for (let i = 0; i < asideImgs.length; i++) {
+   const asideImg = asideImgs[i];
+   asideImg.dataset.id = i;
+   const asideId = asideImg.getAttribute('data-id');
    asideImg.addEventListener('click', function () {
-      alert('click');
+      itemList[currentSlide].classList.remove('d-block');
+      asideImgs[currentSlide].classList.remove('no-filter');
+
+      currentSlide = asideId;
+
+      itemList[currentSlide].classList.add('d-block');
+      asideImgs[currentSlide].classList.add('no-filter');
    });
-});
+}
