@@ -70,3 +70,14 @@ next.addEventListener('click', function () {
 });
 
 // prev
+const prev = document.querySelector('.prev');
+prev.addEventListener('click', function () {
+   itemList[currentSlide].classList.remove('d-block');
+   if (currentSlide > 0) {
+      currentSlide--;
+   } else {
+      currentSlide = itemList.length - 1;
+   }
+   itemList[currentSlide].classList.add('d-block');
+   console.log('prev', currentSlide);
+});
