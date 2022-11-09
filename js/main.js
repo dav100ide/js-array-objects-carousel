@@ -1,6 +1,15 @@
 /* ======================
       functions
 ========================== */
+function removeVisibility() {
+   itemList[currentSlide].classList.remove('d-block');
+   asideImgs[currentSlide].classList.remove('no-filter');
+}
+
+function addVisibility() {
+   itemList[currentSlide].classList.add('d-block');
+   asideImgs[currentSlide].classList.add('no-filter');
+}
 
 /* ======================
       main
@@ -61,31 +70,26 @@ const itemList = document.querySelectorAll('.item');
 let currentSlide = 0;
 const next = document.querySelector('.next');
 next.addEventListener('click', function () {
-   itemList[currentSlide].classList.remove('d-block');
-   asideImgs[currentSlide].classList.remove('no-filter');
+   removeVisibility();
    if (itemList.length - 1 > currentSlide) {
       currentSlide++;
    } else {
       currentSlide = 0;
    }
-   itemList[currentSlide].classList.add('d-block');
-   asideImgs[currentSlide].classList.add('no-filter');
+   addVisibility();
    console.log('next', currentSlide);
 });
 
 // prev
 const prev = document.querySelector('.prev');
 prev.addEventListener('click', function () {
-   itemList[currentSlide].classList.remove('d-block');
-   asideImgs[currentSlide].classList.remove('no-filter');
+   removeVisibility();
    if (currentSlide > 0) {
       currentSlide--;
    } else {
       currentSlide = itemList.length - 1;
    }
-   itemList[currentSlide].classList.add('d-block');
-   asideImgs[currentSlide].classList.add('no-filter');
-
+   addVisibility();
    console.log('prev', currentSlide);
 });
 
@@ -95,12 +99,30 @@ for (let i = 0; i < asideImgs.length; i++) {
    asideImg.dataset.id = i;
    const asideId = asideImg.getAttribute('data-id');
    asideImg.addEventListener('click', function () {
-      itemList[currentSlide].classList.remove('d-block');
-      asideImgs[currentSlide].classList.remove('no-filter');
+      removeVisibility();
 
       currentSlide = asideId;
 
-      itemList[currentSlide].classList.add('d-block');
-      asideImgs[currentSlide].classList.add('no-filter');
+      addVisibility();
    });
 }
+
+const timer = setInterval(function () {
+   removeVisibility();
+   if (currentSlide < itemList.length - 1) {
+      currentSlide++;
+   } else {
+      currentSlide = 0;
+   }
+   addVisibility();
+   console.log(currentSlide);
+}, 3000);
+
+// seleziono il container del carosello senza il titolo
+const container = document.querySelector('.ms_container:not(h1)');
+container.addEventListener('mouseenter', function () {
+   clearInterval(timer);
+   console.log('stoppato', currentSlide);
+});
+
+container.addEventListener('mouseleave', function () {});
