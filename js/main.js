@@ -11,6 +11,15 @@ function addVisibility() {
    asideImgs[currentSlide].classList.add('no-filter');
 }
 
+function automaticSlide() {
+   removeVisibility();
+   if (currentSlide < itemList.length - 1) {
+      currentSlide++;
+   } else {
+      currentSlide = 0;
+   }
+   addVisibility();
+}
 /* ======================
       main
 ========================== */
@@ -107,7 +116,7 @@ for (let i = 0; i < asideImgs.length; i++) {
    });
 }
 
-const timer = setInterval(function () {
+let autoPlay = setInterval(function () {
    removeVisibility();
    if (currentSlide < itemList.length - 1) {
       currentSlide++;
@@ -115,14 +124,23 @@ const timer = setInterval(function () {
       currentSlide = 0;
    }
    addVisibility();
-   console.log(currentSlide);
 }, 3000);
 
-// seleziono il container del carosello senza il titolo
+// seleziono il container del carosello senza il titolo h1
 const container = document.querySelector('.ms_container:not(h1)');
 container.addEventListener('mouseenter', function () {
-   clearInterval(timer);
+   clearInterval(autoPlay);
    console.log('stoppato', currentSlide);
 });
 
-container.addEventListener('mouseleave', function () {});
+container.addEventListener('mouseleave', function () {
+   autoPlay = setInterval(function () {
+      removeVisibility();
+      if (currentSlide < itemList.length - 1) {
+         currentSlide++;
+      } else {
+         currentSlide = 0;
+      }
+      addVisibility();
+   }, 3000);
+});
