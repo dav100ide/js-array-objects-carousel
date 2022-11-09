@@ -17,24 +17,33 @@
       <h1 class="text-center">CAROUSEL 2</h1>
       <div class="ms_container">
          <div class="main-box">
-            <img src="img/01.webp" alt="" />
-            <div class="img-text-group">
-               <h4 class="img-title">ciaooo spider man figo</h4>
-               <p class="img-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci ipsam dolores illo non amet laudantium nam beatae ea consectetur. Laudantium dicta quidem corporis dolorem modi necessitatibus, inventore illo eveniet vitae!</p>
-            </div>
+            <!-- inserimento con handlebars -->
+            <script id="main-box-content" type="text/x-handlebars-template">
+               <div class='h-100 d-none'>
+                  <img src='{{image}}' alt='' />
+                  <div class='img-text-group'>
+                     <h4 class='img-title'>{{title}}</h4>
+                     <p class='img-text'>{{text}}</p>
+                  </div>
+               </div>
+            </script>
+            <!-- /inserimento con handlebars -->
          </div>
          <aside class="aside-box">
             <div class="img-box">
                <button class="prev"><i class="fa-solid fa-chevron-up"></i></button>
                <button class="next"><i class="fa-solid fa-chevron-down"></i></button>
-               <img src="img/01.webp" alt="" />
-               <img src="img/02.webp" alt="" />
-               <img src="img/03.webp" alt="" />
-               <img src="img/04.webp" alt="" />
-               <img src="img/05.webp" alt="" />
+               <!-- inserimento con handlebars -->
+               <script id="aside-container" type="text/x-handlebars-template">
+                  <img src='{{image}}' alt='' />
+               </script>
+               <!-- /inserimento con handlebars -->
             </div>
          </aside>
       </div>
+      <!-- handlebars -->
+      <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+      <!-- /handlebars -->
       <script src="js/main.js"></script>
    </body>
 </html>
