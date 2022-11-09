@@ -5,6 +5,9 @@ img {
    display: block;
    width: 100%;
 }
+button {
+   all: unset;
+}
 /* ======================
       commons
 ========================== */
@@ -32,13 +35,33 @@ body {
 }
 
 /* ======================
-      utilities
-========================== */
-
-/* ======================
       buttons
 ========================== */
+.prev,
+.next {
+   position: absolute;
+   left: 50%;
+   translate: -50%;
+   font-size: 1.3rem;
+   z-index: 6969;
+   background-color: rgba(255, 255, 255, 0.5);
+   width: 2rem;
+   height: 2rem;
+   text-align: center;
+   line-height: 2rem;
+   border-radius: 50%;
+   margin: 0.4rem 0;
+   cursor: pointer;
+}
 
+.next {
+   bottom: 0;
+}
+
+.prev:hover,
+.next:hover {
+   background-color: rgb(255, 255, 255);
+}
 /* aside */
 aside.aside-box {
    width: 25%;
@@ -48,9 +71,19 @@ aside.aside-box {
 .img-box {
    display: flex;
    flex-wrap: wrap;
+   position: relative;
 }
 
-.img-box img {
+:where(.img-box) img {
+   /*con where abbasso la specificità così può
+	agire la classe no-filter*/
    height: calc(350px / 5);
    object-fit: cover;
+   filter: brightness(0.5);
+}
+/* ======================
+      js-utilities
+========================== */
+.no-filter {
+   filter: unset;
 }
