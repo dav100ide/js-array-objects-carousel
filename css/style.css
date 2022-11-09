@@ -5,8 +5,19 @@ img {
    display: block;
    width: 100%;
 }
+
 button {
    all: unset;
+}
+
+p {
+   margin: 0;
+}
+/* ======================
+      typography
+========================== */
+.main-box {
+   color: white;
 }
 /* ======================
       commons
@@ -22,16 +33,6 @@ body {
    justify-content: center;
    align-items: center;
    width: 1000px;
-}
-
-.main-box {
-   width: 75%;
-   height: 21.875rem;
-}
-
-.main-box img {
-   height: 100%;
-   object-fit: cover;
 }
 
 /* ======================
@@ -61,6 +62,26 @@ body {
 .prev:hover,
 .next:hover {
    background-color: rgb(255, 255, 255);
+}
+/* main box */
+
+.main-box {
+   position: relative;
+   width: 75%;
+   height: 21.875rem;
+}
+
+.main-box img {
+   height: 100%;
+   object-fit: cover;
+}
+
+.img-text-group {
+   position: absolute;
+   right: 0;
+   bottom: 0;
+   text-align: right;
+   padding: 1rem;
 }
 /* aside */
 aside.aside-box {
