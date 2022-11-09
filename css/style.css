@@ -1,0 +1,61 @@
+/* ======================
+      reset
+========================== */
+* {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+}
+
+img {
+   display: block;
+   width: 100%;
+}
+/* ======================
+      commons
+========================== */
+body {
+   height: 100vh;
+   display: grid;
+   place-items: center;
+}
+
+.ms_container {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 1000px;
+}
+
+.main-box {
+   width: 75%;
+   height: 21.875rem;
+}
+
+.img-box img {
+   height: 100%;
+   object-fit: cover;
+}
+
+/* ======================
+      utilities
+========================== */
+
+/* ======================
+      buttons
+========================== */
+
+/* aside */
+.aside-box {
+   width: 25%;
+   height: 100%;
+}
+
+.aside-box .img-box {
+   display: flex;
+   flex-wrap: wrap;
+}
+
+.aside-box .img-box img {
+   height: calc(350px / 5);
+}
