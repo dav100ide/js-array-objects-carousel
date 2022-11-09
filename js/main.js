@@ -53,19 +53,23 @@ images.forEach((element) => {
 });
 // la prima img parte con d-block
 document.querySelector('.item').classList.add('d-block');
+const asideImgs = document.querySelectorAll('.aside-box img');
+asideImgs[0].classList.add('no-filter');
 // next
-const next = document.querySelector('.next');
-let currentSlide = 0;
 const itemList = document.querySelectorAll('.item');
 
+let currentSlide = 0;
+const next = document.querySelector('.next');
 next.addEventListener('click', function () {
    itemList[currentSlide].classList.remove('d-block');
+   asideImgs[currentSlide].classList.remove('no-filter');
    if (itemList.length - 1 > currentSlide) {
       currentSlide++;
    } else {
       currentSlide = 0;
    }
    itemList[currentSlide].classList.add('d-block');
+   asideImgs[currentSlide].classList.add('no-filter');
    console.log('next', currentSlide);
 });
 
@@ -73,11 +77,21 @@ next.addEventListener('click', function () {
 const prev = document.querySelector('.prev');
 prev.addEventListener('click', function () {
    itemList[currentSlide].classList.remove('d-block');
+   asideImgs[currentSlide].classList.remove('no-filter');
    if (currentSlide > 0) {
       currentSlide--;
    } else {
       currentSlide = itemList.length - 1;
    }
    itemList[currentSlide].classList.add('d-block');
+   asideImgs[currentSlide].classList.add('no-filter');
+
    console.log('prev', currentSlide);
+});
+
+//asideImgs cliccabili
+asideImgs.forEach((asideImg) => {
+   asideImg.addEventListener('click', function () {
+      alert('click');
+   });
 });

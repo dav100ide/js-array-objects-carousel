@@ -96,13 +96,18 @@ aside.aside-box {
    flex-wrap: wrap;
    position: relative;
 }
-
+.aside-box img {
+   cursor: pointer;
+}
+.aside-box img:hover:not(.no-filter) {
+   filter: brightness(0.6);
+}
 :where(.img-box) img {
    /*con where abbasso la specificità così può
 	agire la classe no-filter*/
    height: calc(350px / 5);
    object-fit: cover;
-   filter: brightness(0.5);
+   filter: brightness(0.4);
 }
 /* ======================
       js-utilities
