@@ -11,15 +11,6 @@ function addVisibility() {
    asideImgs[currentSlide].classList.add('no-filter');
 }
 
-function automaticSlide() {
-   removeVisibility();
-   if (currentSlide < itemList.length - 1) {
-      currentSlide++;
-   } else {
-      currentSlide = 0;
-   }
-   addVisibility();
-}
 /* ======================
       main
 ========================== */
