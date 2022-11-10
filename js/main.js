@@ -103,8 +103,8 @@ prev.addEventListener('click', function () {
 });
 
 //asideImgs cliccabili
-for (let i = 0; i < asideImgs.length; i++) {
-   const asideImg = asideImgs[i];
+
+asideImgs.forEach((asideImg, i) => {
    asideImg.dataset.id = i;
    const asideId = asideImg.getAttribute('data-id');
    asideImg.addEventListener('click', function () {
@@ -114,7 +114,7 @@ for (let i = 0; i < asideImgs.length; i++) {
 
       addVisibility();
    });
-}
+});
 
 let autoPlay = setInterval(function () {
    removeVisibility();
@@ -127,7 +127,7 @@ let autoPlay = setInterval(function () {
 }, 2000);
 
 // seleziono il container del carosello senza il titolo h1
-const container = document.querySelector('.ms_container:not(h1)');
+const container = document.querySelector('.ms_container');
 container.addEventListener('mouseenter', function () {
    clearInterval(autoPlay);
    console.log('stoppato', currentSlide);
