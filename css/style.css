@@ -27,9 +27,9 @@ h1 {
 ========================== */
 body {
    height: 100vh;
+   background-color: #222;
    display: grid;
    place-items: center;
-   background-color: #222;
 }
 
 .ms_container {
@@ -91,7 +91,6 @@ body {
 /* aside */
 aside.aside-box {
    width: 25%;
-   height: 100%;
 }
 
 .img-box {
